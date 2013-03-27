@@ -2,7 +2,7 @@
 
 Generate a maze with the power of lenses!
 
-<img src="https://raw.github.com/sordina/CanvasGraph/master/images/maze.png" alt="Example Maze" />
+<img src="https://raw.github.com/sordina/Maze/master/images/maze.png" alt="Example Maze" />
 
 ## Example
 

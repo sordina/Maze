@@ -2,7 +2,7 @@
 
 import Control.Monad.State.Strict (State, when, execState, gets, modify)
 import Data.Set                   (Set, toList, fromList, empty, member, insert)
-import Data.Lens.Lazy             ((^%=))
+import Data.Lens.Strict           ((^%=))
 import Data.Lens.Template         (nameMakeLens)
 import System.Random              (newStdGen, randomRs)
 import Data.List                  (sortBy)
