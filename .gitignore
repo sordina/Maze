@@ -1,0 +1,10 @@
+*.o
+*.o_p
+*.hi
+dist
+*.swp
+cabal-dev/
+.virthualenv
+test.pbm
+test.png
+Maze
