@@ -2,6 +2,8 @@
 
 Generate a maze with the power of lenses!
 
+Maze is output to STDOUT in [PBM](http://en.wikipedia.org/wiki/Netpbm_format) format.
+
 <img src="https://raw.github.com/sordina/Maze/master/images/maze.png" alt="Example Maze" />
 
 ## Example
