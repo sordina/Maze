@@ -6,6 +6,13 @@ Maze is output to STDOUT in [PBM](http://en.wikipedia.org/wiki/Netpbm_format) fo
 
 <img src="https://raw.github.com/sordina/Maze/master/images/maze.png" alt="Example Maze" />
 
+## Example
+
+Generate a random 6x6 maze, output to a pbm file, then convert to a png with [ImageMagick](http://www.imagemagick.org/script/index.php):
+
+    maze 6 6 > maze.pbm
+    convert maze.pbm maze.png
+
 ## Usage
 
     maze <width/2> <height/2> <entropy>*
@@ -25,10 +32,3 @@ For example:
     maze 12 12 0 1 0 2 1
 
 <img src="https://raw.github.com/sordina/Maze/master/images/maze_entropy.png" alt="Example Maze" />
-
-## Example
-
-Generate a random 6x6 maze, output to a pbm file, then convert to a png with [ImageMagick](http://www.imagemagick.org/script/index.php):
-
-    maze 6 6 > maze.pbm
-    convert maze.pbm maze.png
