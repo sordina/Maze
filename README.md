@@ -8,7 +8,7 @@ Maze is output to STDOUT in [PBM](http://en.wikipedia.org/wiki/Netpbm_format) fo
 
 ## Example
 
-Generate a random 6x6 maze, output to a pbm file, then convert to a png with ImageMagick:
+Generate a random 6x6 maze, output to a pbm file, then convert to a png with [ImageMagick](http://www.imagemagick.org/script/index.php):
 
     maze 6 6 > maze.pbm
     convert maze.pbm maze.png
