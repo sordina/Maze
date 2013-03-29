@@ -20,6 +20,10 @@ Generate a random 6x6 maze, output to a pbm file, then convert to a png with [Im
 The width and height of the maze are actually twice the number of pixels of the argument.
 This is due to the minimum number of pixels required for a path including those of the walls.
 
+The PBM output should be usable directly from the terminal for those with a keen eye:
+
+<img src="https://raw.github.com/sordina/Maze/master/images/maze_pbm.png" alt="Example Maze" />
+
 Entropy refers to a repeating sequence of digits use for the cycled random seed.
 If omitted, the built-in pseudo-random number generator will be used.
 
