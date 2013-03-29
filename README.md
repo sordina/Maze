@@ -24,7 +24,7 @@ The PBM output should be usable directly from the terminal for those with a keen
 
 <img src="https://raw.github.com/sordina/Maze/master/images/maze_pbm.png" alt="Example Maze" />
 
-Entropy refers to a repeating sequence of digits use for the cycled random seed.
+Entropy refers to a repeating sequence of digits used for the cycled decision data.
 If omitted, the built-in pseudo-random number generator will be used.
 
 For example:
