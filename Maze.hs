@@ -50,7 +50,7 @@ step :: Action ()
 step = top >>= visit >> getNeighbours >>= mapM_ proceed >> pop
 
 proceed :: Vector -> Action ()
-proceed    cell = not `fmap` visited cell >>= flip when (removeWall cell >> push cell >> step)
+proceed cell = not `fmap` visited cell >>= flip when (removeWall cell >> push cell >> step)
 
 -- Helpers:
 

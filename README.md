@@ -32,3 +32,16 @@ For example:
     maze 12 12 0 1 0 2 1
 
 <img src="https://raw.github.com/sordina/Maze/master/images/maze_entropy.png" alt="Example Maze" />
+
+## Algorithm
+
+```haskell
+step :: Action ()
+step = top >>= visit >> getNeighbours >>= mapM_ proceed >> pop
+
+proceed :: Vector -> Action ()
+proceed cell = not `fmap` visited cell >>= flip when (removeWall cell >> push cell >> step)
+```
+
+The algorithm is a simple backtracking depth-first-search, with randomness introduced through
+user-supplied entropy, or the `System.Random` RNG.
