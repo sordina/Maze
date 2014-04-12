@@ -15,5 +15,5 @@ cabal-version:       >=1.8
 
 executable maze
   main-is:           Maze.hs
-  build-depends:     base >=4.5.0, bytestring, random, data-lens, data-lens-template, containers, mtl
-  ghc-options:       -rtsopts -with-rtsopts=-K100M
+  build-depends:     base >=4.5.0, bytestring, random, data-lens, data-lens-template, containers, mtl, mwc-random
+  ghc-options:       -O -rtsopts -with-rtsopts=-K100M

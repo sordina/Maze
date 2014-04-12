@@ -1,10 +1,11 @@
 {-# LANGUAGE TemplateHaskell, FlexibleContexts #-}
 
 import Control.Monad.State.Strict (State, when, execState, gets, modify)
+import Control.Monad.ST.Lazy      (runST, strictToLazyST, ST)
 import Data.Set                   (Set, toList, fromList, empty, member, insert)
 import Data.Lens.Strict           ((^%=))
 import Data.Lens.Template         (nameMakeLens)
-import System.Random              (newStdGen, randomRs)
+import System.Random.MWC          (Seed,createSystemRandom, Gen, save, restore, uniformR, Variate)
 import Data.List                  (sortBy)
 import Data.Ord                   (comparing)
 import Control.Monad              (liftM2)
@@ -28,6 +29,19 @@ data Dimensions = Dimensions { width  :: Int
 
 $( nameMakeLens ''States (Just . ('l':)) )
 
+-- Random Helpers
+
+randomRs :: (Int,Int) -> Seed -> [Int]
+randomRs r s = runST $ do
+  g <- strictToLazyST $ restore s
+  advance r g
+
+advance :: (Int,Int) -> Gen s -> ST s [Int]
+advance r g = do
+  x <- strictToLazyST $ uniformR r g
+  xs <- x `seq` advance r g
+  return (x:xs)
+
 -- Main:
 
 main :: IO ()
@@ -35,7 +49,7 @@ main = do args <- getArgs
           let (w:h:rest) | length args > 1 = map read args
                          | otherwise       = [10,5]
 
-              randomGen  | null rest       = randomRs (0,3) `fmap` newStdGen
+              randomGen  | null rest       = randomRs (0,3) `fmap` (save =<< createSystemRandom)
                          | otherwise       = return $ cycle rest
 
               pipeline   = putStr . draw dimensions . toList . history . execState step . States [(cx dimensions, cy dimensions)] empty dimensions
