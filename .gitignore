@@ -10,3 +10,4 @@ test.png
 Maze
 .cabal-sandbox/
 cabal.sandbox.config
+.stack-work/
