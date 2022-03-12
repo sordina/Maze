@@ -20,7 +20,7 @@ packages:
     hackage: data-lens-template-2.2
 snapshots:
 - completed:
-    size: 523443
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/14/0.yaml
-    sha256: 283773e7120f5446d961eab35ea95c9af9c24187cc178537bd29273200a05171
-  original: lts-14.0
+    size: 524789
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/14/8.yaml
+    sha256: 8af5eb80734f02621d37e82cc0cde614af2ddc9c320610acb0b1b6d9ac162930
+  original: lts-14.8
